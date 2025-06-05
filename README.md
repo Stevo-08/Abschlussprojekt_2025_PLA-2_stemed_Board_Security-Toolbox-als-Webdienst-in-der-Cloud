@@ -65,6 +65,10 @@ Die Security Toolbox ist ein Webdienst, der verschiedene Tools zur IT-Sicherheit
 ## 🖼️ Screenshots
 
 ![image](https://github.com/user-attachments/assets/aa7323d5-e83d-4b16-8e83-86554ae18d84)
+![image](https://github.com/user-attachments/assets/197b19d8-730f-4170-8331-7649b4ce2061)
+![image](https://github.com/user-attachments/assets/b9b840c1-4050-4638-ac35-aae5a54802bc)
+![image](https://github.com/user-attachments/assets/2ab339ef-60d2-4013-b18d-4176dfd57bbe)
+
 
 
 ## 📁 Projektstruktur (Beispiel)
