@@ -71,18 +71,3 @@ Die Security Toolbox ist ein Webdienst, der verschiedene Tools zur IT-Sicherheit
 
 
 
-## 📁 Projektstruktur (Beispiel)
-
-```bash
-security-toolbox/
-├── index.html
-├── style.css
-├── js/
-│   └── password.js
-├── tools/
-│   ├── ipcheck.py
-│   ├── header_scan.py
-├── certbot/
-│   └── ssl-setup.sh
-└── README.md
-
