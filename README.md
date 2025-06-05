@@ -16,7 +16,7 @@ Die Security Toolbox ist ein Webdienst, der verschiedene Tools zur IT-Sicherheit
 ## 🧱 Meilensteine
 
 ### 🟩 Meilenstein 1 – Setup & Grundlagen (2–3 Tage)
-- Cloudserver bereitstellen (z. B. Ubuntu auf Oracle Cloud, Hetzner, Proxmox)
+- Cloudserver bereitstellen (Proxmox)
 - Webserver einrichten (Apache oder Nginx)
 - Domain oder direkte IP erreichbar machen
 - Startseite mit Menü (HTML/CSS)
