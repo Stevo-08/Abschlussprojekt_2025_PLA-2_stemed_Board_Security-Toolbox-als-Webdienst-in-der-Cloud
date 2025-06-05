@@ -1,7 +1,7 @@
 # 🔐 Security Toolbox – Webdienst in der Cloud
 
 **Projektarbeit – Abschlussprojekt ZLI Basislehrjahr**  
-**Autor**: *[Dein Name]*  
+**Autor**: *Stevan Medic*  
 **Firma**: Stevan Solutions  
 **Zeitraum**: 12 Tage
 
