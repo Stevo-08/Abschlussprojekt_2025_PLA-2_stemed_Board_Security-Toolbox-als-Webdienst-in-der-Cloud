@@ -2,7 +2,7 @@
 
 **Projektarbeit – Abschlussprojekt ZLI Basislehrjahr**  
 **Autor**: *Stevan Medic*  
-**Firma**: Stevan Solutions  
+**Firma**: Stevan Solutions (Bison Schweiz AG Lehrling 1 Jahr Plattformentwicklung) 
 **Zeitraum**: 12 Tage
 
 ---
