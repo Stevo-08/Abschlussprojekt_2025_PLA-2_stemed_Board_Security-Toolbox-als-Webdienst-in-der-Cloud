@@ -48,8 +48,7 @@ Die Security Toolbox ist ein Webdienst, der verschiedene Tools zur IT-Sicherheit
 
 ## 🌍 Zugriff
 
-- 🔗 [http://yourdomain.com](http://yourdomain.com)  
-- 📡 Oder direkt via IP: `http://<IP-Adresse>`
+- 📡 direkt via IP: `http://<IP-Adresse>`
 
 ---
 
