@@ -29,8 +29,7 @@ Die Security Toolbox ist ein Webdienst, der verschiedene Tools zur IT-Sicherheit
 
 ### 🟥 Meilenstein 3 – Veröffentlichung & Sicherheit (2–3 Tage)
 - Webdienst öffentlich zugänglich machen
-- HTTPS via Let's Encrypt (Certbot)
-- Eingabevalidierung & Logging
+- HTTPS
 - Screenshots und Abschlussbericht erstellen
 
 ---
