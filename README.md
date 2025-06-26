@@ -56,7 +56,7 @@ Die Security Toolbox ist ein Webdienst, der verschiedene Tools zur IT-Sicherheit
 - HTTPS-Verschlüsselung
 - Input-Schutz durch Validierung
 - Zugriff auf Intranet nur aus LAN-Netz (192.168.x.x)
-- Logging aller sensiblen Anfragen
+
 
 ---
 
