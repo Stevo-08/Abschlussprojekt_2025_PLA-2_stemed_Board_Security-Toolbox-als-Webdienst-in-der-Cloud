@@ -102,7 +102,9 @@ Firma: Bison Schweiz AG – Winterthur
 
 
 ---
-
+##Quelle
+ -ChatGPT
+---
 ## Lizenz
 
 Dieses Projekt dient zu Ausbildungszwecken im Bereich IT-Security & Webentwicklung.  
