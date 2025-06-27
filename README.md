@@ -42,6 +42,8 @@ Dieses Projekt stellt eine **Security Toolbox** als **Webdienst** zur Verfügung
 /etc/apache2/ → Webserver-Konfiguration
 /etc/systemd/system/ → Eigene Dienste
 /backups/ → Backup-Verzeichnis (lokal)
+![image](https://github.com/user-attachments/assets/f9569935-3110-4fa7-a018-26f886c7670e)
+
 
 
 ---
