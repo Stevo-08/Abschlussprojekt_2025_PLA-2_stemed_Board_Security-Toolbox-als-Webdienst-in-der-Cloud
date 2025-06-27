@@ -39,7 +39,7 @@ Dieses Projekt stellt eine **Security Toolbox** als **Webdienst** zur Verfügung
 
 ```plaintext
 /var/www/html/           → Startseite & HTML-Tools
-/opt/tools/              → Python-Backends mit Flask
+/tools/                  → Python-Backends mit Flask
 /etc/apache2/            → Apache-Konfigurationen
 /etc/systemd/system/     → Eigene systemd-Dienste für Flask-Apps
 /backups/                → Lokale Backups (automatisiert via Cron)
