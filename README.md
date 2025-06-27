@@ -35,14 +35,18 @@ Dieses Projekt stellt eine **Security Toolbox** als **Webdienst** zur Verfügung
 
 ---
 
-## Projektstruktur
+## 📁 Projektstruktur
 
-/var/www/html/ → Startseite & Tools
-/opt/tools/ → Flask-Backends
-/etc/apache2/ → Webserver-Konfiguration
-/etc/systemd/system/ → Eigene Dienste
-/backups/ → Backup-Verzeichnis (lokal)
-![image](https://github.com/user-attachments/assets/f9569935-3110-4fa7-a018-26f886c7670e)
+```plaintext
+/var/www/html/           → Startseite & HTML-Tools
+/opt/tools/              → Python-Backends mit Flask
+/etc/apache2/            → Apache-Konfigurationen
+/etc/systemd/system/     → Eigene systemd-Dienste für Flask-Apps
+/backups/                → Lokale Backups (automatisiert via Cron)
+![image](https://github.com/user-attachments/assets/d9b2029e-afd1-41fa-88a9-79ce28cca580)
+
+```
+
 
 
 
