@@ -103,6 +103,7 @@ Firma: Bison Schweiz AG – Winterthur
 
 ---
 ##Quelle
+
  -ChatGPT
 ---
 ## Lizenz
