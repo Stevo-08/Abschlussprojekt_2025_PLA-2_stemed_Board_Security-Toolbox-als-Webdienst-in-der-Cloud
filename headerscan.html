@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>HTTP Header Scanner</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; background: #f4f4f4; }
+    textarea { width: 100%; height: 300px; font-family: monospace; }
+    input[type=text] { width: 80%; padding: 10px; }
+    button { padding: 10px; }
+  </style>
+</head>
+<body>
+<div style="margin: 20px 0;">
+  <a href="/index.html" style="
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #006eff;
+    color: white;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,110,255,0.4);
+    transition: background-color 0.3s ease;
+  "
+  onmouseover="this.style.backgroundColor='#0050c8';"
+  onmouseout="this.style.backgroundColor='#006eff';"
+  >Zur  ck zum Men  </a>
+</div>
+
+  <h1> ^=^{   ^o HTTP Header Scanner</h1>
+  <form id="scannerForm">
+    <input type="text" name="url" id="url" placeholder="https://example.com" required>
+    <button type="submit">Scannen</button>
+  </form>
+  <h3>Ergebnis:</h3>
+  <textarea id="result" readonly></textarea>
+
+  <script>
+    document.getElementById("scannerForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const url = document.getElementById("url").value;
+      fetch("/tools/scan", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: "url=" + encodeURIComponent(url)
+      })
+      .then(r => r.json())
+      .then(data => {
+        let output = "";
+        for (let key in data) {
+          output += key + ": " + data[key] + "\n";
+        }
+        document.getElementById("result").value = output;
+      })
+      .catch(err => {
+        document.getElementById("result").value = "Fehler: " + err;
+      });
+    });
+  </script>
+</body>
+</html>
