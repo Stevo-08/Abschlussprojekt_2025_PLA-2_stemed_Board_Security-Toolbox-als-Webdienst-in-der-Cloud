@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Hash-Generator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1> ^=^t^p Hash-Generator</h1>
+    <textarea id="input" placeholder="Text eingeben..."></textarea>
+
+    <select id="algo">
+      <option value="SHA256">SHA-256</option>
+      <option value="SHA512">SHA-512</option>
+      <option value="MD5">MD5</option>
+    </select>
+
+    <div class="btn-row">
+      <button class="generate-btn" onclick="generate()">Hash generieren</button>
+      <button class="copy-btn" onclick="copyToClipboard()">Kopieren</button>
+    </div>
+
+    <input type="text" id="output" readonly>
+
+    <a href="/index.html"><button class="back-btn">Zur  ck zur Startseite</button></a>
+  </div>
+
+  <script>
+    function generate() {
+      const text = document.getElementById("input").value;
+      const algo = document.getElementById("algo").value;
+      let hash = "";
+
+      if (algo === "MD5") {
+        hash = CryptoJS.MD5(text).toString();
+      } else if (algo === "SHA256") {
+        hash = CryptoJS.SHA256(text).toString();
+      } else if (algo === "SHA512") {
+        hash = CryptoJS.SHA512(text).toString();
+      }
+      document.getElementById("output").value = hash;
+    }
+
+    function copyToClipboard() {
+      const output = document.getElementById("output");
+      output.select();
+      output.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      alert("Hash kopiert!");
+    }
+  </script>
+</body>
+</html>
