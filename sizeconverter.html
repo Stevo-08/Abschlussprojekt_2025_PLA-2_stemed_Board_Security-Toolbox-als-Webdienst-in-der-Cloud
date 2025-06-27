@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dateigrößen-Konverter</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f3f4f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+    }
+    input[type="number"], select, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .back-button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 24px;
+      background-color: #006eff;
+      color: white;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,110,255,0.4);
+      transition: background-color 0.3s ease;
+    }
+    .back-button:hover {
+      background-color: #0050c8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Dateigrößen-Konverter</h2>
+    <input type="number" id="sizeInput" placeholder="Größe eingeben (in Bytes)" />
+    <select id="unitSelect">
+      <option value="KB">Kilobytes (KB)</option>
+      <option value="MB">Megabytes (MB)</option>
+      <option value="GB">Gigabytes (GB)</option>
+    </select>
+    <button onclick="convertSize()">Konvertieren</button>
+    <div id="output"></div>
+    <a href="/index.html" class="back-button">← Zurück zum Menü</a>
+  </div>
+
+  <script>
+    function convertSize() {
+      const size = parseFloat(document.getElementById('sizeInput').value);
+      const unit = document.getElementById('unitSelect').value;
+      let result;
+
+      if (unit === "KB") {
+        result = (size / 1024).toFixed(2) + " KB";
+      } else if (unit === "MB") {
+        result = (size / 1048576).toFixed(2) + " MB";
+      } else if (unit === "GB") {
+        result = (size / 1073741824).toFixed(2) + " GB";
+      }
+
+      document.getElementById('output').innerText = `Ergebnis: ${result}`;
+    }
+  </script>
+</body>
+</html>
