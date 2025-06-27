@@ -43,10 +43,8 @@ Dieses Projekt stellt eine **Security Toolbox** als **Webdienst** zur Verfügung
 /etc/apache2/            → Apache-Konfigurationen
 /etc/systemd/system/     → Eigene systemd-Dienste für Flask-Apps
 /backups/                → Lokale Backups (automatisiert via Cron)
-![image](https://github.com/user-attachments/assets/d9b2029e-afd1-41fa-88a9-79ce28cca580)
-
 ```
-
+![image](https://github.com/user-attachments/assets/d9b2029e-afd1-41fa-88a9-79ce28cca580)
 
 
 
