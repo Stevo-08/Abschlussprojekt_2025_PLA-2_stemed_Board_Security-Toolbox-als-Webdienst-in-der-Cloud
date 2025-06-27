@@ -91,9 +91,9 @@ Firma: Bison Schweiz AG – Winterthur
 
 ## Links
 
-- 📦 [GitHub Repository](https://github.com/dein-repo-link-hier)
-- 📝 [Abschlussdokumentation (PDF/DOCX)](./Abschlussdokumentation_2025_PLA-2_stemed.docx)
-- 📸 Screenshots und Quellcode im Projektordner
+- [GitHub Repository]([https://github.com/dein-repo-link-hier](https://github.com/Stevo-08/Abschlussprojekt_2025_PLA-2_stemed_Board_Security-Toolbox-als-Webdienst-in-der-Cloud))
+- [Abschlussdokumentation (PDF)](./Abschlussdokumentation_2025_PLA-2_stemed.docx)
+
 
 ---
 
