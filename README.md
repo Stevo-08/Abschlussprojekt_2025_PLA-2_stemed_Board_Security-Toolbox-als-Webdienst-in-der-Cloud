@@ -1,71 +1,103 @@
-# 🔐 Security Toolbox – Webdienst in der Cloud
+# Security Toolbox als Webdienst in der Cloud
 
-**Projektarbeit – Abschlussprojekt ZLI Basislehrjahr**  
-**Autor**: *Stevan Medic*  
-**Firma**: Stevan Solutions (Bison Schweiz AG Lehrling 1 Jahr Plattformentwicklung) 
-**Zeitraum**: 12 Tage
+> Abschlussprojekt von Stevan Medic – ZLI 2025  
+> Sicherheits-Tools, gehostet auf eigenem Cloudserver mit Weboberfläche
 
 ---
 
-## 📌 Projektübersicht
+## Projektbeschreibung
 
-Die Security Toolbox ist ein Webdienst, der verschiedene Tools zur IT-Sicherheit bereitstellt. Ziel ist es, eine öffentlich erreichbare Website mit praktischen Security-Tools zu entwickeln, die in der Cloud gehostet wird.
-
----
-
-## 🧱 Meilensteine
-
-### 🟩 Meilenstein 1 – Setup & Grundlagen (2–3 Tage)
-- Cloudserver bereitstellen (Proxmox)
-- Webserver einrichten (Apache oder Nginx)
-- Domain oder direkte IP erreichbar machen
-- Startseite mit Menü (HTML/CSS)
-
-### 🟨 Meilenstein 2 – Tool-Entwicklung (5–6 Tage)
-- 🔑 **Passwortgenerator** (JavaScript oder Python Flask)
-- 🌐 **IP-Check Tool** (zeigt öffentliche IP + Geo-Daten)
-- 🕵️‍♂️ **HTTP-Header-Scanner** (requests/curl)
-- Tool-Auswahl über Buttons oder Dropdown-Menü
-
-### 🟥 Meilenstein 3 – Veröffentlichung & Sicherheit (2–3 Tage)
-- Webdienst öffentlich zugänglich machen
-- HTTPS
-- Screenshots und Abschlussbericht erstellen
+Dieses Projekt stellt eine **Security Toolbox** als **Webdienst** zur Verfügung. Es handelt sich um eine lokal gehostete Webseite, die nützliche Sicherheitstools wie Passwortgenerator, IP-Check, HTTP-Header-Scanner und mehr anbietet. Die Oberfläche ist in HTML/CSS gestaltet, die Tools basieren auf JavaScript oder Python (Flask). Der Webserver läuft auf einem Ubuntu-Server in einer VM (lokal via VMware oder Proxmox).
 
 ---
 
-## 🛠️ Technologien
+## Features
 
-- **Backend**: Python (Flask), Bash, JavaScript
-- **Frontend**: HTML, CSS
-- **Server**: Ubuntu (Cloud VM)
-- **Webserver**: Apache oder Nginx
-- **SSL-Zertifikate**: Let's Encrypt / Certbot
-- **Sicherheit**: Fail2Ban (optional), OPNsense (für LAN-Restriktion)
-
----
-
-## 🌍 Zugriff
-
-- 📡 direkt via IP: `http://<IP-Adresse>`
+| Tool                  | Beschreibung                                                                 |
+|-----------------------|------------------------------------------------------------------------------|
+| Passwortgenerator  | Zufällige sichere Passwörter, generiert lokal im Browser                     |
+| IP-Check Tool       | Zeigt die öffentliche IP + Geo-Daten via API (clientseitig)                  |
+| HTTP-Header-Scanner | Flask-Backend analysiert HTTP-Header einer angegebenen URL                   |
+| Passwort-Checker    | Bewertet Passwortstärke nach Länge, Zeichenarten etc.                        |
+| Hash-Generator      | SHA-256, SHA-512 oder MD5 Hashes erzeugen, ohne Serververbindung             |
+| Größen-Konverter    | Bytes in KB/MB/GB umrechnen mit einfacher JS-Logik                           |
+| Hexadezimal-Konverter | Wandelt Hex-Werte in Dezimalzahlen um                                       |
 
 ---
 
-## 🔒 Sicherheitskonzept
+## Technische Umsetzung
 
-- HTTPS-Verschlüsselung
-- Input-Schutz durch Validierung
-- Zugriff auf Intranet nur aus LAN-Netz (192.168.x.x)
+- **Backend:** Python (Flask), systemd-Dienste
+- **Frontend:** HTML, CSS, JavaScript
+- **Webserver:** Apache2 auf Ubuntu 24.04 LTS
+- **Zertifikate:** Selbstsigniertes SSL (Let's Encrypt fehlgeschlagen)
+- **Hosting:** VM über Proxmox oder VMware Workstation
+
+---
+
+## Projektstruktur
+
+/var/www/html/ → Startseite & Tools
+/opt/tools/ → Flask-Backends
+/etc/apache2/ → Webserver-Konfiguration
+/etc/systemd/system/ → Eigene Dienste
+/backups/ → Backup-Verzeichnis (lokal)
 
 
 ---
 
-## 🖼️ Screenshots
+## Backup-Konzept
 
-![image](https://github.com/user-attachments/assets/aa7323d5-e83d-4b16-8e83-86554ae18d84)
-![image](https://github.com/user-attachments/assets/197b19d8-730f-4170-8331-7649b4ce2061)
-![image](https://github.com/user-attachments/assets/b9b840c1-4050-4638-ac35-aae5a54802bc)
-![image](https://github.com/user-attachments/assets/2ab339ef-60d2-4013-b18d-4176dfd57bbe)
+- Tägliche inkrementelle Backups (`rsync`)
+- Wöchentliche Vollbackups (`tar.gz`)
+- Speicherung lokal & optional extern (Cloud/USB)
+- Wiederherstellung einfach über Kopie oder `tar -xzf`
+- Automatisiert mit `cron`, gesichert mit `chmod`, optional GPG-Verschlüsselung
 
+---
 
+## Bekannte Probleme
 
+- Zugriff von aussen gescheitert (Portweiterleitung, Firewall)
+- Let's Encrypt-Zertifikat konnte nicht ausgestellt werden
+- Nested Virtualization unter VMware erschwerte KVM-Nutzung von Proxmox
+- Übergang zu eigenständiger Ubuntu-VM war notwendig
+
+---
+
+## Arbeitsjournal
+
+Alle Projekttage wurden dokumentiert: Einrichtung, Probleme, Lösungen, Fortschritte.  
+→ Siehe Abschnitt **Arbeitsjournal** in der Abschlussdokumentation.
+
+---
+
+## ToDo (optional)
+
+- [ ] Öffentlichen Zugriff (HTTP/HTTPS) ermöglichen  
+- [ ] Domain mit Freenom verknüpfen  
+- [ ] HTTPS mit Let's Encrypt aktivieren  
+- [ ] Weitere Tools ergänzen (z. B. Portscanner, Hashvergleich etc.)
+
+---
+
+## Autor
+
+**Stevan Medic**  
+Projekt im Rahmen des ZLI-Basislehrjahrs  
+Firma: Bison Schweiz AG – Winterthur
+
+---
+
+## Links
+
+- 📦 [GitHub Repository](https://github.com/dein-repo-link-hier)
+- 📝 [Abschlussdokumentation (PDF/DOCX)](./Abschlussdokumentation_2025_PLA-2_stemed.docx)
+- 📸 Screenshots und Quellcode im Projektordner
+
+---
+
+## Lizenz
+
+Dieses Projekt dient zu Ausbildungszwecken im Bereich IT-Security & Webentwicklung.  
+Kein Produktivbetrieb – Nutzung auf eigene Verantwortung.
